@@ -16,8 +16,8 @@ export PATH="${PATH}:/usr/local/bin"
 #######################
 # Use prompt to get state of pane.
 mimic_state() {
-   user=alex
-   prompt_regex="^${user}.*@.*:"
+   user=greeneca
+   prompt_regex="^${user}.*@.*(.*):"
    prompt_line=$(grep $(echo ${prompt_regex}) ${backup_dir}/${pane_full} | tail -n 1 | sed 's/ \[git:.*$//')
    host=$(printf "${prompt_line}" | cut -d@ -f2 | cut -d: -f1)
    working_dir=$(printf "${prompt_line}" | cut -d: -f2 | cut -d\> -f1)
